@@ -1,0 +1,423 @@
+{
+	"info": {
+		"_postman_id": "62f1b9ce-dd02-49ae-8dda-bb869c22396d",
+		"name": "Project",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24630372"
+	},
+	"item": [
+		{
+			"name": "Cinema",
+			"item": [
+				{
+					"name": "All",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/cinema/",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"cinema",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Kinepolis\",\n    \"location\":\"Madrid\",\n    \"movies\":[\"The Matrix\"]\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/cinema",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"cinema"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Movies",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"cinemaId\" :  \"638cbe483ca67865137d5966\",\n    \"movieId\" : \"63827d8b29cac02bdf6b3e14\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/cinema/add-movie",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"cinema",
+								"add-movie"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/cinema/{{cinemaDeleteId}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"cinema",
+								"{{cinemaDeleteId}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "By Id",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/cinema/{{cinemaUpdateId}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"cinema",
+								"{{cinemaUpdateId}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "All Copy",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/cinema/",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"cinema",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Movies",
+			"item": [
+				{
+					"name": "All",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true,
+						"disabledSystemHeaders": {
+							"content-length": true,
+							"host": true,
+							"content-type": true,
+							"user-agent": true,
+							"connection": true,
+							"accept": true,
+							"accept-encoding": true
+						}
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"The Matrix\",\n    \"director\": \"Hermanas Wachowski\",\n    \"year\": 1999,\n    \"genre\": \"Acción\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/movies",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"movies"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "By Id",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/movies/{{moviesId}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"movies",
+								"{{moviesId}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "By title",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/movies/title/{{moviesTilte}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"movies",
+								"title",
+								"{{moviesTilte}}"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "By genre",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/movies/genre/{{moviesGenre}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"movies",
+								"genre",
+								"{{moviesGenre}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "By year",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/movies/year/{{moviesYear}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"movies",
+								"year",
+								"{{moviesYear}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"Deadpool\",\n    \"director\": \"Tim Miller\",\n    \"year\": 2016,\n    \"genre\": \"Acción\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/movies",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"movies"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/movies/{{moviesDeleteId}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"movies",
+								"{{moviesDeleteId}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "By Id",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"genre\":    \"Aventuras\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/movies/{{moviesUpdateId}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"movies",
+								"{{moviesUpdateId}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://localhost:3000"
+		},
+		{
+			"key": "moviesId",
+			"value": "638ca82ebae0150e7d6eb7b5"
+		},
+		{
+			"key": "moviesTilte",
+			"value": "The Matrix Reloaded"
+		},
+		{
+			"key": "moviesGenre",
+			"value": "Animación"
+		},
+		{
+			"key": "moviesYear",
+			"value": "2010"
+		},
+		{
+			"key": "moviesDeleteId",
+			"value": "638ca82ebae0150e7d6eb7b5"
+		},
+		{
+			"key": "moviesUpdateId",
+			"value": "638ca82ebae0150e7d6eb7b5"
+		},
+		{
+			"key": "cinemaDeleteId",
+			"value": "638cc8a8df6077d6abf943d3"
+		},
+		{
+			"key": "cinemaUpdateId",
+			"value": "638cc899df6077d6abf943d1"
+		}
+	]
+}
