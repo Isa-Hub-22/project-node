@@ -166,7 +166,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"title\": \"The Matrix\",\n    \"director\": \"Hermanas Wachowski\",\n    \"year\": 1999,\n    \"genre\": \"Acción\"\n}"
+							"raw": ""
 						},
 						"url": {
 							"raw": "{{baseUrl}}/movies",
@@ -298,8 +298,34 @@
 							}
 						],
 						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"title\": \"Deadpool\",\n    \"director\": \"Tim Miller\",\n    \"year\": 2016,\n    \"genre\": \"Acción\"\n}"
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "Venom",
+									"type": "text"
+								},
+								{
+									"key": "director",
+									"value": "Ruben Fleischer",
+									"type": "text"
+								},
+								{
+									"key": "year",
+									"value": "2018",
+									"type": "text"
+								},
+								{
+									"key": "genre",
+									"value": "Ciencia ficción",
+									"type": "text"
+								},
+								{
+									"key": "picture",
+									"type": "file",
+									"src": "_9mwTnNkl/Venom.jpeg"
+								}
+							]
 						},
 						"url": {
 							"raw": "{{baseUrl}}/movies",
@@ -360,6 +386,109 @@
 					"response": []
 				}
 			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"isa@gmail.com\",\n    \"password\": \"estoEsUnaPassword-1\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/user/register",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"user",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"isa@gmail.com\",\n    \"password\": \"estoEsUnaPassword-1\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/user/login",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"user",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Logout",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/user/logout",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"user",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Image",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/uploads/the_matrix.png",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"uploads",
+						"the_matrix.png"
+					]
+				}
+			},
+			"response": []
 		}
 	],
 	"event": [
@@ -389,7 +518,7 @@
 		},
 		{
 			"key": "moviesId",
-			"value": "638ca82ebae0150e7d6eb7b5"
+			"value": "63827d8b29cac02bdf6b3e14"
 		},
 		{
 			"key": "moviesTilte",
@@ -405,7 +534,7 @@
 		},
 		{
 			"key": "moviesDeleteId",
-			"value": "638ca82ebae0150e7d6eb7b5"
+			"value": "638c937fbae0150e7d6eb791"
 		},
 		{
 			"key": "moviesUpdateId",
